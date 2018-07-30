@@ -3,14 +3,15 @@ package com.eyubero.pbsp.ui.splash;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.eyubero.pbsp.R;
 import com.eyubero.pbsp.ui.MainActivity;
+
+/**
+ * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
+ * on 30/07/2018 (ノಠ益ಠ)ノ
+ */
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 goToMain();
             }
-        },3000);
+        }, 3000);
 
     }
 

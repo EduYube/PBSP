@@ -1,9 +1,6 @@
 package com.eyubero.pbsp.ui;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,6 +11,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.eyubero.pbsp.R;
+
+/**
+ * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
+ * on 30/07/2018 (ノಠ益ಠ)ノ
+ */
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
