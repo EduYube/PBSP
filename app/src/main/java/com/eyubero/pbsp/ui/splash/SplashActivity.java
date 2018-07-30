@@ -3,9 +3,9 @@ package com.eyubero.pbsp.ui.splash;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 
 import com.eyubero.pbsp.R;
+import com.eyubero.pbsp.base.BaseActivity;
 import com.eyubero.pbsp.ui.MainActivity;
 
 /**
@@ -13,7 +13,7 @@ import com.eyubero.pbsp.ui.MainActivity;
  * on 30/07/2018 (ノಠ益ಠ)ノ
  */
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
