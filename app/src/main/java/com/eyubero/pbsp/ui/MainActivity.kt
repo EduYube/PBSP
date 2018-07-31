@@ -67,21 +67,24 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         val id = item.itemId
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        when (id) {
+            R.id.nav_camera -> {
 
-        } else if (id == R.id.nav_slideshow) {
+            }
+            R.id.nav_gallery -> {
 
-        } else if (id == R.id.nav_manage) {
+            }
+            R.id.nav_slideshow -> {
 
-        } else if (id == R.id.nav_share) {
+            }
+            R.id.nav_share -> {
 
-        } else if (id == R.id.nav_send) {
+            }
+            R.id.nav_send -> {
 
+            }
         }
 
         drawer.closeDrawer(GravityCompat.START)
