@@ -47,7 +47,7 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
             drawer.closeDrawer(GravityCompat.START)
         } else {
             if (closeCount == 0) {
-                Toast.makeText(this, "Si desea salir de la aplicación pulse de nuevo sobre el botón de retorno", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.back_pressed_text), Toast.LENGTH_LONG).show()
                 closeCount++
             } else {
                 closeCount = 0

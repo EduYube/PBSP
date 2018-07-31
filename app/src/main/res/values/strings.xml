@@ -11,4 +11,5 @@
     <string name="report">Informe</string>
     <string name="player_change">Cambiar de jugador</string>
     <string name="add_images">Añadir imágenes</string>
+    <string name="back_pressed_text">Si desea salir de la aplicación pulse de nuevo sobre el botón de retorno</string>
 </resources>
