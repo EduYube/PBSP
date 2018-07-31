@@ -6,7 +6,7 @@ import android.os.Handler
 
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseActivity
-import com.eyubero.pbsp.ui.MainActivity
+import com.eyubero.pbsp.ui.AppActivity
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
@@ -24,7 +24,7 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun goToMain() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, AppActivity::class.java)
         startActivity(intent)
     }
 

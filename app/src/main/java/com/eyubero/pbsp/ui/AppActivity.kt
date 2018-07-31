@@ -1,5 +1,7 @@
 package com.eyubero.pbsp.ui
 
+import android.content.Intent
+import android.content.Intent.*
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -8,6 +10,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseActivity
@@ -17,11 +20,12 @@ import com.eyubero.pbsp.base.BaseActivity
  * on 30/07/2018 (ノಠ益ಠ)ノ
  */
 
-class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
+class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var toolbar: Toolbar
     lateinit var drawer: DrawerLayout
     lateinit var toggle: ActionBarDrawerToggle
+    var closeCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +34,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         setSupportActionBar(toolbar)
 
         drawer = findViewById(R.id.drawer_layout)
-        toggle = ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -43,7 +46,17 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+            if (closeCount == 0) {
+                Toast.makeText(this, "Si desea salir de la aplicación pulse de nuevo sobre el botón de retorno", Toast.LENGTH_LONG).show()
+                closeCount++
+            } else {
+                closeCount = 0
+                intent = Intent(ACTION_MAIN)
+                intent.addCategory(CATEGORY_HOME)
+                intent.flags = FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                finish()
+            }
         }
     }
 
