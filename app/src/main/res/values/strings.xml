@@ -5,4 +5,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="data_input">Introducción de los datos</string>
+    <string name="graphic">Gráfica</string>
+    <string name="report">Informe</string>
+    <string name="player_change">Cambiar de jugador</string>
+    <string name="add_images">Añadir imágenes</string>
+    <string name="back_pressed_text">Si desea salir de la aplicación pulse de nuevo sobre el botón de retorno</string>
 </resources>
