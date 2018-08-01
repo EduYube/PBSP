@@ -2,10 +2,10 @@ package com.eyubero.pbsp.ui
 
 import android.content.Intent
 import android.content.Intent.*
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.Menu
@@ -14,6 +14,7 @@ import android.widget.Toast
 
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseActivity
+import com.eyubero.pbsp.databinding.ActivityAppBinding
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
@@ -22,20 +23,19 @@ import com.eyubero.pbsp.base.BaseActivity
 
 class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    lateinit var binding: ActivityAppBinding
     lateinit var toolbar: Toolbar
-    lateinit var drawer: DrawerLayout
     lateinit var toggle: ActionBarDrawerToggle
     var closeCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_app)
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
-        drawer = findViewById(R.id.drawer_layout)
-        toggle = ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer.addDrawerListener(toggle)
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
@@ -43,8 +43,8 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
     }
 
     override fun onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             if (closeCount == 0) {
                 Toast.makeText(this, getString(R.string.back_pressed_text), Toast.LENGTH_LONG).show()
@@ -100,7 +100,7 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
             }
         }
 
-        drawer.closeDrawer(GravityCompat.START)
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 }
