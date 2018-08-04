@@ -1,5 +1,6 @@
 package com.eyubero.pbsp.ui
 
+import android.arch.lifecycle.ViewModelProvider
 import android.content.Intent
 import android.content.Intent.*
 import android.databinding.DataBindingUtil
@@ -41,7 +42,7 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
 
         val fragmentManager = fragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.player_fragment,PlayerFragment())
+        fragmentTransaction.replace(R.id.app_activity,PlayerFragment.newInstance(),PlayerFragment::class.java.simpleName)
         fragmentTransaction.commit()
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
