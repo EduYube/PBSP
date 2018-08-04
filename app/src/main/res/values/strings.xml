@@ -12,4 +12,7 @@
     <string name="player_change">Cambiar de jugador</string>
     <string name="add_images">Añadir imágenes</string>
     <string name="back_pressed_text">Si desea salir de la aplicación pulse de nuevo sobre el botón de retorno</string>
+    <string name="player_name_hint">Introduce el nombre de la jugadora o jugador</string>
+    <string name="player_team_hint">Introdice el equipo del jugador o jugadora</string>
+    <string name="bt_player_text">Iniciar estudio</string>
 </resources>

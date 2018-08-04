@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseActivity
 import com.eyubero.pbsp.databinding.ActivityAppBinding
+import com.eyubero.pbsp.ui.fragments.PlayerFragment
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
@@ -37,6 +38,11 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+
+        val fragmentManager = fragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.add(R.id.player_fragment,PlayerFragment())
+        fragmentTransaction.commit()
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
