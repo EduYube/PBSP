@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">PBSP</string>
+    <string name="app_name">PBSP.DEV</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="existent_player">Jugador\/a existente</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="data_input">Introducción de los datos</string>
     <string name="graphic">Gráfica</string>
