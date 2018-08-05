@@ -1,7 +1,5 @@
 package com.eyubero.pbsp.ui.fragments
 
-import android.app.Fragment
-
 import com.eyubero.pbsp.base.BaseFragment
 
 /**
