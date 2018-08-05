@@ -14,7 +14,7 @@ import com.eyubero.pbsp.databinding.FragmentArticulateBinding
  * on 30/07/2018 (ノಠ益ಠ)ノ
  */
 
-class ArticulateFragment : BaseFragment(){
+class ArticulateFragment : BaseFragment() {
 
     lateinit var binding: FragmentArticulateBinding
 
@@ -22,9 +22,8 @@ class ArticulateFragment : BaseFragment(){
         fun newInstance() = ArticulateFragment()
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-
-        binding = DataBindingUtil.inflate(inflater!!, R.layout.fragment_articulate,container,false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DataBindingUtil.inflate(inflater!!, R.layout.fragment_articulate, container, false)
         return binding.root
     }
 }

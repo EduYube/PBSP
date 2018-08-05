@@ -40,7 +40,7 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        val fragmentManager = fragmentManager
+        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.app_activity,PlayerFragment.newInstance(),PlayerFragment::class.java.simpleName)
         fragmentTransaction.commit()
@@ -67,43 +67,33 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        val id = item.itemId
-
-
-        return if (id == R.id.action_settings) {
-            true
-        } else super.onOptionsItemSelected(item)
-
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
+
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+
         when (id) {
-            R.id.nav_camera -> {
+            R.id.data_introduce -> {
 
             }
-            R.id.nav_gallery -> {
+            R.id.report -> {
 
             }
-            R.id.nav_slideshow -> {
+            R.id.graph -> {
 
             }
-            R.id.nav_share -> {
+            R.id.add_images -> {
 
             }
-            R.id.nav_send -> {
+            R.id.change_player -> {
 
+                fragmentTransaction.replace(
+                        R.id.app_activity,
+                        PlayerFragment.newInstance(),
+                        PlayerFragment::class.java.toString()
+                ).commit()
             }
         }
 
