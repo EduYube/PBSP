@@ -1,10 +1,21 @@
 package com.eyubero.pbsp.base
 
-import android.app.Fragment
+import android.support.v4.app.Fragment
+
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
  * on 30/07/2018 (ノಠ益ಠ)ノ
  */
 
-abstract class BaseFragment : Fragment()
+abstract class BaseFragment : Fragment(){
+
+    var showMenu = false
+
+    fun showMenu(fragment: String): Boolean{
+
+        if(fragment != "player")
+
+        return showMenu
+    }
+}
