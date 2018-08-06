@@ -22,9 +22,8 @@ class ArticulateFragment : BaseFragment(){
         fun newInstance() = ArticulateFragment()
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-
-        binding = DataBindingUtil.inflate(inflater!!, R.layout.fragment_articulate,container,false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DataBindingUtil.inflate(inflater!!, R.layout.fragment_articulate, container, false)
         return binding.root
     }
 }

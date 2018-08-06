@@ -8,14 +8,4 @@ import android.support.v4.app.Fragment
  * on 30/07/2018 (ノಠ益ಠ)ノ
  */
 
-abstract class BaseFragment : Fragment(){
-
-    var showMenu = false
-
-    fun showMenu(fragment: String): Boolean{
-
-        if(fragment != "player")
-
-        return showMenu
-    }
-}
+abstract class BaseFragment : Fragment()

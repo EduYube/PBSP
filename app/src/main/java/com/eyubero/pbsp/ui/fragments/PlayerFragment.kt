@@ -21,7 +21,7 @@ class PlayerFragment : BaseFragment(), View.OnClickListener{
         fun newInstance() = PlayerFragment()
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater!!, R.layout.fragment_player, container, false)
         binding.btPlayer.setOnClickListener(this)
         return binding.root
@@ -36,7 +36,7 @@ class PlayerFragment : BaseFragment(), View.OnClickListener{
     fun goToStudie(view: View?){
 
         val fragmentManager = fragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
+        val fragmentTransaction = fragmentManager!!.beginTransaction()
         fragmentTransaction.replace(R.id.app_activity,ArticulateFragment.newInstance(),ArticulateFragment::class.java.simpleName)
         fragmentTransaction.commit()
     }

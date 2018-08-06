@@ -40,7 +40,7 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        val fragmentManager = fragmentManager
+        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.app_activity,PlayerFragment.newInstance(),PlayerFragment::class.java.simpleName)
         fragmentTransaction.commit()
