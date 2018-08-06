@@ -1,4 +1,4 @@
-package com.eyubero.pbsp.ui.fragments
+package com.eyubero.pbsp.ui.fragments.dataplayer
 
 import com.eyubero.pbsp.base.BaseFragment
 
@@ -7,4 +7,4 @@ import com.eyubero.pbsp.base.BaseFragment
  * on 30/07/2018 (ノಠ益ಠ)ノ
  */
 
-class StrongFragment : BaseFragment()
+class FunctionalFragment : BaseFragment()

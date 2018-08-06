@@ -1,4 +1,4 @@
-package com.eyubero.pbsp.ui.fragments
+package com.eyubero.pbsp.ui.fragments.dataplayer
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle

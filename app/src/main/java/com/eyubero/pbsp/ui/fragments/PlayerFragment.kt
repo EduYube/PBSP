@@ -2,11 +2,14 @@ package com.eyubero.pbsp.ui.fragments
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.support.design.widget.NavigationView
+import android.support.v7.app.ActionBarDrawerToggle
 import android.util.Log
 import android.view.*
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseFragment
 import com.eyubero.pbsp.databinding.FragmentPlayerBinding
+import com.eyubero.pbsp.ui.fragments.dataplayer.ArticulateFragment
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
@@ -15,6 +18,7 @@ import com.eyubero.pbsp.databinding.FragmentPlayerBinding
 class PlayerFragment : BaseFragment(), View.OnClickListener{
 
     lateinit var binding: FragmentPlayerBinding
+
     companion object {
         fun newInstance() = PlayerFragment()
     }
@@ -50,7 +54,7 @@ class PlayerFragment : BaseFragment(), View.OnClickListener{
 
         val fragmentManager = fragmentManager
         val fragmentTransaction = fragmentManager!!.beginTransaction()
-        fragmentTransaction.replace(R.id.app_activity,ArticulateFragment.newInstance(),ArticulateFragment::class.java.simpleName)
+        fragmentTransaction.replace(R.id.app_activity, ArticulateFragment.newInstance(), ArticulateFragment::class.java.simpleName)
         fragmentTransaction.commit()
     }
 }

@@ -1,58 +1,50 @@
-package com.eyubero.pbsp.ui
+package com.eyubero.pbsp.ui.activities
 
-import android.arch.lifecycle.ViewModelProvider
 import android.content.Intent
 import android.content.Intent.*
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
-import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseActivity
-import com.eyubero.pbsp.databinding.ActivityAppBinding
+import com.eyubero.pbsp.databinding.ActivityPlayerBinding
+import com.eyubero.pbsp.ui.fragments.GraphFragment
+import com.eyubero.pbsp.ui.fragments.dataplayer.ArticulateFragment
 import com.eyubero.pbsp.ui.fragments.PlayerFragment
+import com.eyubero.pbsp.ui.fragments.ReportFragment
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
  * on 30/07/2018 (ノಠ益ಠ)ノ
  */
 
-class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
+class PlayerActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    lateinit var binding: ActivityAppBinding
-    lateinit var toolbar: Toolbar
-    lateinit var toggle: ActionBarDrawerToggle
+    lateinit var binding: ActivityPlayerBinding
     var closeCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_app)
-        toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_player)
+
+        goToPlayerFragment()
+    }
+
+    private fun goToPlayerFragment() {
+
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.app_activity,PlayerFragment.newInstance(),PlayerFragment::class.java.simpleName)
         fragmentTransaction.commit()
-
-        val navigationView = findViewById<NavigationView>(R.id.nav_view)
-        navigationView.setNavigationItemSelectedListener(this)
     }
 
     override fun onBackPressed() {
-        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            binding.drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
             if (closeCount == 0) {
                 Toast.makeText(this, getString(R.string.back_pressed_text), Toast.LENGTH_LONG).show()
                 closeCount++
@@ -64,7 +56,6 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
                 startActivity(intent)
                 finish()
             }
-        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -77,15 +68,27 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
         when (id) {
             R.id.data_introduce -> {
 
+                fragmentTransaction.replace(
+                        R.id.app_activity,
+                        ArticulateFragment.newInstance(),
+                        ArticulateFragment::class.java.toString()
+                ).commit()
             }
             R.id.report -> {
 
+                fragmentTransaction.replace(
+                        R.id.app_activity,
+                        ReportFragment.newInstance(),
+                        ReportFragment::class.java.toString()
+                ).commit()
             }
             R.id.graph -> {
 
-            }
-            R.id.add_images -> {
-
+                fragmentTransaction.replace(
+                        R.id.app_activity,
+                        GraphFragment.newInstance(),
+                        GraphFragment::class.java.toString()
+                ).commit()
             }
             R.id.change_player -> {
 
@@ -97,7 +100,6 @@ class AppActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListe
             }
         }
 
-        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 }
