@@ -9,13 +9,4 @@ import android.support.v4.app.Fragment
  */
 
 abstract class BaseFragment : Fragment(){
-
-    var showMenu = false
-
-    fun showMenu(fragment: String): Boolean{
-
-        if(fragment != "player")
-
-        return showMenu
-    }
 }

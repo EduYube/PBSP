@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.pbsp"
+        applicationId "com.pbsp.dev"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -41,3 +41,5 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+apply plugin: 'kotlin-android-extensions'
