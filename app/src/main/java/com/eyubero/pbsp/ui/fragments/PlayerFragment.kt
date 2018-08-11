@@ -30,7 +30,6 @@ class PlayerFragment : BaseFragment(), View.OnClickListener{
 
     override fun onClick(view: View?) {
 
-        Log.d("GoToStudie |>", "go to Studie")
         goToStudie()
     }
 
