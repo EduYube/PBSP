@@ -2,13 +2,9 @@ package com.eyubero.pbsp.ui.fragments
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.FragmentManager
-import android.support.v4.view.ViewPager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseFragment
 import com.eyubero.pbsp.databinding.FragmentArticulateBinding
@@ -18,7 +14,7 @@ import com.eyubero.pbsp.databinding.FragmentArticulateBinding
  * on 30/07/2018 (ノಠ益ಠ)ノ
  */
 
-class ArticulateFragment : BaseFragment(){
+class ArticulateFragment : BaseFragment() {
 
     lateinit var binding: FragmentArticulateBinding
 
@@ -29,7 +25,8 @@ class ArticulateFragment : BaseFragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_articulate, container, false)
         activity!!.title = this.javaClass.simpleName.substringBefore("Fragment")
+
         return binding.root
     }
-
 }
+

@@ -40,7 +40,7 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.study_activity,ArticulateFragment.newInstance(),ArticulateFragment::class.java.simpleName)
+        fragmentTransaction.replace(R.id.study_activity, PlayerFragment.newInstance(), PlayerFragment::class.java.simpleName)
         fragmentTransaction.commit()
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
@@ -71,24 +71,34 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         when (id) {
-            R.id.nav_data_introduce -> {
+            R.id.nav_articulate -> {
 
-                fragmentTransaction.replace(R.id.study_activity,ArticulateFragment.newInstance(),ArticulateFragment::class.java.simpleName)
+                fragmentTransaction.replace(R.id.study_activity, ArticulateFragment.newInstance(), ArticulateFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
-            R.id.nav_graph -> {
+            R.id.nav_flexibility -> {
 
-                fragmentTransaction.replace(R.id.study_activity,FlexibilityFragment.newInstance(), FlexibilityFragment::class.java.simpleName)
+                fragmentTransaction.replace(R.id.study_activity, FlexibilityFragment.newInstance(), FlexibilityFragment::class.java.simpleName)
+                fragmentTransaction.commit()
+            }
+            R.id.nav_functional -> {
+
+                fragmentTransaction.replace(R.id.study_activity, FunctionalFragment.newInstance(), FunctionalFragment::class.java.simpleName)
+                fragmentTransaction.commit()
+            }
+            R.id.nav_strong -> {
+
+                fragmentTransaction.replace(R.id.study_activity, StrongFragment.newInstance(), StrongFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
             R.id.nav_report -> {
 
-                fragmentTransaction.replace(R.id.study_activity,FunctionalFragment.newInstance(), FunctionalFragment::class.java.simpleName)
+                fragmentTransaction.replace(R.id.study_activity, FunctionalFragment.newInstance(), FunctionalFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
             R.id.nav_change_player -> {
 
-                fragmentTransaction.replace(R.id.study_activity,PlayerFragment.newInstance(), PlayerFragment::class.java.simpleName)
+                fragmentTransaction.replace(R.id.study_activity, PlayerFragment.newInstance(), PlayerFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
         }
