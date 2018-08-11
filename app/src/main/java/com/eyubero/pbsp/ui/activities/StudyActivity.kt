@@ -6,6 +6,7 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
+import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
@@ -26,7 +27,6 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
     lateinit var binding: ActivityStudyBinding
     lateinit var toolbar: Toolbar
     lateinit var toggle: ActionBarDrawerToggle
-    var closeCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,30 +38,20 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.study_activity, PlayerFragment.newInstance(), PlayerFragment::class.java.simpleName)
-        fragmentTransaction.commit()
-
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
+
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.study_activity,ArticulateFragment.newInstance(),ArticulateFragment::class.java.simpleName)
+        fragmentTransaction.commit()
     }
 
     override fun onBackPressed() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            if (closeCount == 0) {
-                Toast.makeText(this, getString(R.string.back_pressed_text), Toast.LENGTH_LONG).show()
-                closeCount++
-            } else {
-                closeCount = 0
-                intent = Intent(ACTION_MAIN)
-                intent.addCategory(CATEGORY_HOME)
-                intent.flags = FLAG_ACTIVITY_NEW_TASK
-                startActivity(intent)
-                finish()
-            }
+            super.onBackPressed()
         }
     }
 
@@ -98,8 +88,8 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
             }
             R.id.nav_change_player -> {
 
-                fragmentTransaction.replace(R.id.study_activity, PlayerFragment.newInstance(), PlayerFragment::class.java.simpleName)
-                fragmentTransaction.commit()
+                    fragmentTransaction.replace(R.id.activity_player, PlayerFragment.newInstance(), PlayerFragment::class.java.simpleName)
+                    fragmentTransaction.commit()
             }
         }
 

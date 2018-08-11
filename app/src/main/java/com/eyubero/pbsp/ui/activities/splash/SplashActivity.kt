@@ -6,7 +6,9 @@ import android.os.Handler
 
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseActivity
+import com.eyubero.pbsp.ui.activities.PlayerActivity
 import com.eyubero.pbsp.ui.activities.StudyActivity
+import com.eyubero.pbsp.ui.fragments.PlayerFragment
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
@@ -24,7 +26,7 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun goToMain() {
-        val intent = Intent(this, StudyActivity::class.java)
+        val intent = Intent(this, PlayerActivity::class.java)
         startActivity(intent)
         finish()
     }

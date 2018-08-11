@@ -1,5 +1,6 @@
 package com.eyubero.pbsp.ui.fragments
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import android.view.*
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseFragment
 import com.eyubero.pbsp.databinding.FragmentPlayerBinding
+import com.eyubero.pbsp.ui.activities.StudyActivity
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
@@ -32,11 +34,6 @@ class PlayerFragment : BaseFragment(), View.OnClickListener{
         goToStudie()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater!!.inflate(R.menu.main, menu)
-        menu!!.setGroupVisible(R.menu.main,true)
-    }
-
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item!!.itemId
 
@@ -47,9 +44,7 @@ class PlayerFragment : BaseFragment(), View.OnClickListener{
     }
     fun goToStudie(){
 
-        val fragmentManager = fragmentManager
-        val fragmentTransaction = fragmentManager!!.beginTransaction()
-        fragmentTransaction.replace(R.id.study_activity,ArticulateFragment.newInstance(),ArticulateFragment::class.java.simpleName)
-        fragmentTransaction.commit()
+        val intent = Intent(activity, StudyActivity::class.java)
+        startActivity(intent)
     }
 }
