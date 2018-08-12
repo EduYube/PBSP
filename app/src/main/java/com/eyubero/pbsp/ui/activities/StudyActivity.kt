@@ -1,16 +1,14 @@
 package com.eyubero.pbsp.ui.activities
 
 import android.content.Intent
-import android.content.Intent.*
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
+import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseActivity
@@ -43,8 +41,15 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.study_activity,ArticulateFragment.newInstance(),ArticulateFragment::class.java.simpleName)
+        fragmentTransaction.replace(R.id.study_activity, ArticulateFragment.newInstance(), ArticulateFragment::class.java.simpleName)
         fragmentTransaction.commit()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        menu!!.clear()
+        inflater.inflate(R.menu.activity_main_drawer, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onBackPressed() {
@@ -88,8 +93,9 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
             }
             R.id.nav_change_player -> {
 
-                    fragmentTransaction.replace(R.id.activity_player, PlayerFragment.newInstance(), PlayerFragment::class.java.simpleName)
-                    fragmentTransaction.commit()
+                val intent = Intent(this, PlayerActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
 
