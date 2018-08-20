@@ -1,14 +1,15 @@
 package com.eyubero.pbsp.ui.fragments
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseFragment
 import com.eyubero.pbsp.databinding.FragmentPlayerBinding
 import com.eyubero.pbsp.ui.activities.StudyActivity
+import com.eyubero.pbsp.viewmodel.PlayerViewModel
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
@@ -25,6 +26,8 @@ class PlayerFragment : BaseFragment(), View.OnClickListener{
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_player, container, false)
         activity!!.title = this.javaClass.simpleName.substringBefore("Fragment")
         binding.btPlayer.setOnClickListener(this)
+
+        val mViewModel = ViewModelProviders.of(this).get(PlayerViewModel::class.java)
         return binding.root
     }
 
@@ -35,7 +38,6 @@ class PlayerFragment : BaseFragment(), View.OnClickListener{
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item!!.itemId
-
 
         return if (id == R.id.action_settings) {
             true
