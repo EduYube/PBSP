@@ -12,13 +12,10 @@ import com.eyubero.pbsp.ui.fragments.PlayerFragment
 class PlayerActivity : BaseActivity() {
 
     lateinit var binding: ActivityPlayerBinding
-    lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_player)
-        toolbar = findViewById(R.id.toolbar_player)
-        setSupportActionBar(toolbar)
 
         val fragmentManager = supportFragmentManager
         val fragmentTransition = fragmentManager.beginTransaction()
