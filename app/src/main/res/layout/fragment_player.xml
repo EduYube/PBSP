@@ -21,7 +21,9 @@
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/tiet_player_name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:nextFocusDown="@+id/til_player_team" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -30,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="@string/player_team_hint"
+            android:nextFocusDown="@+id/til_player_age"
             android:textSize="13sp"
             app:layout_constraintBottom_toTopOf="@+id/ll_player_caracteristics"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +42,8 @@
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/tiet_player_team"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:singleLine="true"  />
         </android.support.design.widget.TextInputLayout>
 
         <LinearLayout
@@ -58,13 +62,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:layout_weight="3"
-                android:hint="EDAD"
+                android:hint="Edad"
                 android:textSize="13sp">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/tiet_player_age"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -73,13 +79,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:layout_weight="3"
-                android:hint="PIERNA"
+                android:hint="Pierna"
                 android:textSize="13sp">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/tiet_player_domination"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:nextFocusDown="@+id/til_player_nationality" />
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
@@ -90,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_weight="3"
-            android:hint="Nationality"
+            android:hint="Nacionalidad"
             android:textSize="13sp"
             app:layout_constraintBottom_toTopOf="@+id/bt_player"
             app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +108,8 @@
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/tiet_player_nationality"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
