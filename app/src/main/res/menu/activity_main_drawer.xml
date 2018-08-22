@@ -3,32 +3,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/data_input" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/graphic" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/report" />
-    </group>
+    <item android:title="@string/data_input">
 
-    <item android:title="Otros">
         <menu>
+
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/add_images" />
+                android:id="@+id/nav_articulate"
+                android:icon="@drawable/ic_articulate"
+                android:title="@string/articulate" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/player_change" />
+                android:id="@+id/nav_flexibility"
+                android:icon="@drawable/ic_flexibility"
+                android:title="@string/flexibility" />
+            <item
+                android:id="@+id/nav_functional"
+                android:icon="@drawable/ic_functional"
+                android:title="@string/functional" />
+            <item
+                android:id="@+id/nav_strong"
+                android:icon="@drawable/ic_strong"
+                android:title="@string/strong" />
         </menu>
     </item>
+    <item android:title="Otros">
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_graph"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/graphic" />
+            <item
+                android:id="@+id/nav_report"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/report" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/nav_change_player"
+        android:icon="@drawable/ic_menu_send"
+        android:title="@string/player_change" />
 
 </menu>

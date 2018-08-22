@@ -15,4 +15,8 @@
     <string name="player_name_hint">Introduce el nombre de la jugadora o jugador</string>
     <string name="player_team_hint">Introdice el equipo del jugador o jugadora</string>
     <string name="bt_player_text">Iniciar estudio</string>
+    <string name="articulate">Articular</string>
+    <string name="flexibility">Flexibilidad</string>
+    <string name="functional">Funcional</string>
+    <string name="strong">Fuerza</string>
 </resources>

@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.eyubero.pbsp.ui.fragments.PlayerFragment" />
-    </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/til_player_team"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:hint="@string/player_team_hint"
-            android:textSize="13sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/til_player_name">
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/tiet_player_team"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/til_player_name"
@@ -36,26 +13,116 @@
             android:layout_margin="15dp"
             android:hint="@string/player_name_hint"
             android:textSize="13sp"
-            app:layout_constraintTop_toBottomOf="@+id/til_player_team"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/til_player_team"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/bt_player">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/tiet_player_name"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:nextFocusDown="@+id/til_player_team" />
         </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_player_team"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:hint="@string/player_team_hint"
+            android:nextFocusDown="@+id/til_player_age"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/ll_player_caracteristics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_player_name">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tiet_player_team"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="true"  />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_player_caracteristics"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/til_player_team"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_player_nationality">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_player_age"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_weight="3"
+                android:hint="Edad"
+                android:textSize="13sp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tiet_player_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_player_domination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_weight="3"
+                android:hint="Pierna"
+                android:textSize="13sp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tiet_player_domination"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:nextFocusDown="@+id/til_player_nationality" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_player_nationality"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="3"
+            android:hint="Nacionalidad"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_player"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_player_caracteristics">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tiet_player_nationality"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="true" />
+        </android.support.design.widget.TextInputLayout>
+
         <Button
             android:id="@+id/bt_player"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:background="@color/colorPrimary"
             android:text="@string/bt_player_text"
             android:textColor="@color/withe"
-            app:layout_constraintTop_toBottomOf="@+id/til_player_name"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_player_nationality" />
     </android.support.constraint.ConstraintLayout>
 </layout>
