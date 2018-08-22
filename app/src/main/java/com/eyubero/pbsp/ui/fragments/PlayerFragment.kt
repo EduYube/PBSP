@@ -68,6 +68,7 @@ class PlayerFragment : BaseFragment(), View.OnClickListener {
         playerModel.setplayerName(binding.tietPlayerName.text.toString())
         playerModel.setplayerTeam(binding.tietPlayerTeam.text.toString())
         playerModel.setplayerAge(binding.tietPlayerAge.text.toString())
+        playerModel.setplayerPosition(binding.tietPlayerPosition.text.toString())
         playerModel.setplayerDomination(binding.tietPlayerDomination.text.toString())
         playerModel.setplayerNationality(binding.tietPlayerNationality.text.toString())
 
@@ -79,6 +80,7 @@ class PlayerFragment : BaseFragment(), View.OnClickListener {
         return !(binding.tietPlayerName.text.toString().isEmpty() ||
                 binding.tietPlayerTeam.text.toString().isEmpty() ||
                 binding.tietPlayerAge.text.toString().isEmpty() ||
+                binding.tietPlayerPosition.text.toString().isEmpty() ||
                 binding.tietPlayerDomination.text.toString().isEmpty() ||
                 binding.tietPlayerNationality.text.toString().isEmpty())
     }

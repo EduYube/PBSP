@@ -10,7 +10,7 @@ class PlayerModel {
     lateinit var playerName: String
     lateinit var playerAge: String
     lateinit var playerPosition: String
-    lateinit var plyaerDomination: String
+    lateinit var playerDomination: String
     lateinit var playerNationality: String
 
     fun getplayerName(): String{
@@ -55,12 +55,12 @@ class PlayerModel {
 
     fun getplayerDomination(): String{
 
-        return plyaerDomination
+        return playerDomination
     }
 
     fun setplayerDomination(playerDomination: String){
 
-        this.plyaerDomination = playerDomination
+        this.playerDomination = playerDomination
     }
 
     fun getplayerNationality(): String{
