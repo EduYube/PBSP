@@ -9,11 +9,14 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseActivity
 import com.eyubero.pbsp.databinding.ActivityStudyBinding
 import com.eyubero.pbsp.ui.fragments.*
+import com.eyubero.pbsp.utils.SharedApp
 
 /**
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
@@ -37,12 +40,24 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
         toggle.syncState()
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        val header = navigationView.getHeaderView(0)
+        setPlayerMenuData(header)
         navigationView.setNavigationItemSelectedListener(this)
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.study_activity, ArticulateFragment.newInstance(), ArticulateFragment::class.java.simpleName)
         fragmentTransaction.commit()
+    }
+
+    private fun setPlayerMenuData(header: View?) {
+
+        val name = header!!.findViewById<View>(R.id.menu_player_name) as TextView
+        val team = header!!.findViewById<View>(R.id.menu_player_team) as TextView
+
+        name.text = SharedApp.prefs.sharedName
+        team.text = SharedApp.prefs.sharedTeam
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
