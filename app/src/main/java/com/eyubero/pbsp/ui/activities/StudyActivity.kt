@@ -60,13 +60,6 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        menu!!.clear()
-        inflater.inflate(R.menu.activity_main_drawer, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
     override fun onBackPressed() {
         if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
             binding.drawerLayout.closeDrawer(GravityCompat.START)

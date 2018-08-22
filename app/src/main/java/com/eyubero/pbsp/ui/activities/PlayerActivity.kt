@@ -2,7 +2,6 @@ package com.eyubero.pbsp.ui.activities
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.view.Menu
 import com.eyubero.pbsp.R
 import com.eyubero.pbsp.base.BaseActivity
