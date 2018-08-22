@@ -19,4 +19,5 @@
     <string name="flexibility">Flexibilidad</string>
     <string name="functional">Funcional</string>
     <string name="strong">Fuerza</string>
+    <string name="player_position_hint">Introduce la posicion donde juega</string>
 </resources>

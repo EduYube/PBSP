@@ -22,10 +22,11 @@ class PlayerViewModel : ViewModel() {
 
         val sharedPreferences = SharedApp.prefs
 
-        sharedPreferences.sharedName = this.player!!.getplayerName()
-        sharedPreferences.sharedTeam = this.player!!.getplayerTeam()
-        sharedPreferences.sharedAge = this.player!!.getplayerAge()
-        sharedPreferences.sharedDomination = this.player!!.getplayerDomination()
-        sharedPreferences.sharedNationality = this.player!!.getplayerNationality()
+        sharedPreferences.sharedName = this.player!!.playerName
+        sharedPreferences.sharedTeam = this.player!!.playerTeam
+        sharedPreferences.sharedAge = this.player!!.playerAge
+        sharedPreferences.sharedDomination = this.player!!.playerDomination
+        sharedPreferences.sharedNationality = this.player!!.playerNationality
+        sharedPreferences.sharedPosition = this.player!!.playerPosition
     }
 }
