@@ -4,11 +4,11 @@ package com.eyubero.pbsp.model
  * Created by Edu Yube ┌(▀Ĺ̯ ▀-͠ )┐
  * on 31/07/2018 (ノಠ益ಠ)ノ
  */
-class PlayerModel (team: String, name: String, age: Int, position: String, domination: String, nationality: String){
+class PlayerModel {
 
     lateinit var playerTeam: String
     lateinit var playerName: String
-    var playerAge: Int = 0
+    lateinit var playerAge: String
     lateinit var playerPosition: String
     lateinit var plyaerDomination: String
     lateinit var playerNationality: String
@@ -33,12 +33,12 @@ class PlayerModel (team: String, name: String, age: Int, position: String, domin
         this.playerTeam = playerTeam
     }
 
-    fun getplayerAge(): Int{
+    fun getplayerAge(): String{
 
         return playerAge
     }
 
-    fun setplayerAge(playerAge: Int){
+    fun setplayerAge(playerAge: String){
 
         this.playerAge = playerAge
     }

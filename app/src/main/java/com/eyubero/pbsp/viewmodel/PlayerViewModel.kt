@@ -1,13 +1,31 @@
 package com.eyubero.pbsp.viewmodel
 
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
+import com.eyubero.pbsp.model.PlayerModel
+import com.eyubero.pbsp.utils.SharedApp
 
-class PlayerViewModel: ViewModel() {
+class PlayerViewModel : ViewModel() {
 
-    lateinit var playerName: LiveData<String>
-    lateinit var playerTeam: LiveData<String>
-    lateinit var playerAge: LiveData<Int>
-    lateinit var playerDomination: LiveData<String>
-    lateinit var playerNationality: LiveData<String>
+    var player: PlayerModel? = null
+
+    fun getplayer(): PlayerModel {
+
+        return player!!
+    }
+
+    fun setplayer(player: PlayerModel) {
+
+        this.player = player
+    }
+
+    fun savePlayer() {
+
+        val sharedPreferences = SharedApp.prefs
+
+        sharedPreferences.sharedName = this.player!!.getplayerName()
+        sharedPreferences.sharedTeam = this.player!!.getplayerTeam()
+        sharedPreferences.sharedAge = this.player!!.getplayerAge()
+        sharedPreferences.sharedDomination = this.player!!.getplayerDomination()
+        sharedPreferences.sharedNationality = this.player!!.getplayerNationality()
+    }
 }
