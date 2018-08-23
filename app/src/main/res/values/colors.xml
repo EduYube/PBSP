@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="withe">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="blue_pbsp">#4286f4</color>
+    <color name="green_pbsp">#419b3e</color>
+    <color name="yellow_pbsp">#f7d113</color>
+    <color name="red_pbsp">#f94545</color>
 </resources>

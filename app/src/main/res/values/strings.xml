@@ -20,4 +20,7 @@
     <string name="functional">Funcional</string>
     <string name="strong">Fuerza</string>
     <string name="player_position_hint">Introduce la posicion donde juega</string>
+    <string name="left">Izquierda</string>
+    <string name="rigth">Derecha</string>
+    <string name="aforgoings">Antecedentes</string>
 </resources>
