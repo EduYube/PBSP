@@ -16,13 +16,13 @@
                 android:icon="@drawable/ic_flexibility"
                 android:title="@string/flexibility" />
             <item
-                android:id="@+id/nav_functional"
-                android:icon="@drawable/ic_functional"
-                android:title="@string/functional" />
-            <item
                 android:id="@+id/nav_strong"
                 android:icon="@drawable/ic_strong"
                 android:title="@string/strong" />
+            <item
+                android:id="@+id/nav_functional"
+                android:icon="@drawable/ic_functional"
+                android:title="@string/functional" />
         </menu>
     </item>
     <item android:title="Otros">

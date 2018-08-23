@@ -90,13 +90,13 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
             }
             R.id.nav_functional -> {
 
-                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.red_pbsp)))
+                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.yellow_pbsp)))
                 fragmentTransaction.replace(R.id.study_activity, FunctionalFragment.newInstance(), FunctionalFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
             R.id.nav_strong -> {
 
-                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.yellow_pbsp)))
+                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.red_pbsp)))
                 fragmentTransaction.replace(R.id.study_activity, StrongFragment.newInstance(), StrongFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
