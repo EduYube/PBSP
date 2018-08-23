@@ -47,10 +47,12 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
         setPlayerMenuData(header)
         navigationView.setNavigationItemSelectedListener(this)
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.study_activity, ArticulateFragment.newInstance(), ArticulateFragment::class.java.simpleName)
-        fragmentTransaction.commit()
+        if (savedInstanceState == null) {
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.study_activity, ArticulateFragment.newInstance(), ArticulateFragment::class.java.simpleName)
+            fragmentTransaction.commit()
+        }
     }
 
     private fun setPlayerMenuData(header: View?) {
