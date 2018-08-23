@@ -1,10 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TableLayout
+            android:id="@+id/tl_functional"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/toStrong_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yellow"
+                    android:gravity="center"
+                    android:text="Prueba"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:text="Puntuación"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:text="Comentarios"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yellow"
+                    android:gravity="center"
+                    android:text="Drop Jump"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_PuntuacionDJ"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_ComentDJ"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:hint="Introduce las observaciones"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yellow"
+                    android:gravity="center"
+                    android:text="Single leg"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_PuntuacionSL"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_ComentSL"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:hint="Introduce las observaciones"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yellow"
+                    android:gravity="center"
+                    android:text="Marcha"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_PuntuacionMarcha"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_ComentMarcha"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:hint="Introduce las observaciones"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_yellow"
+                    android:gravity="center"
+                    android:text="EMG"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_PuntuacionEMG"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_ComentEMG"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@drawable/cell_yellow"
+                    android:gravity="center"
+                    android:hint="Introduce las observaciones"
+                    android:textSize="14sp" />
+            </TableRow>
+        </TableLayout>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/toStrong_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/red_pbsp"
+            android:src="@drawable/ic_withe_arrow_left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tl_functional" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
