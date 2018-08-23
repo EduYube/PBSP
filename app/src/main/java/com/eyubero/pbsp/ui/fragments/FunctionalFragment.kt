@@ -26,6 +26,15 @@ class FunctionalFragment : BaseFragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_functional,container,false)
         activity!!.title = this.javaClass.simpleName.substringBefore("Fragment")
+        activity!!.window.navigationBarColor = resources.getColor(R.color.yellow_pbsp)
+        activity!!.window.statusBarColor = resources.getColor(R.color.yellow_pbsp)
+
+        binding.toStrongButton.setOnClickListener {
+            val fragmentManager = fragmentManager
+            val fragmentTransaction = fragmentManager!!.beginTransaction()
+
+            fragmentTransaction.replace(R.id.study_activity, StrongFragment.newInstance(), StrongFragment::class.java.simpleName)
+            fragmentTransaction.commit() }
         return binding.root
     }
 }

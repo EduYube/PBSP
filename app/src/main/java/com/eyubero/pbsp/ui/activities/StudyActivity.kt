@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.v4.app.FragmentController
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
@@ -78,44 +79,37 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
         when (id) {
             R.id.nav_articulate -> {
 
-                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue_pbsp)))
                 fragmentTransaction.replace(R.id.study_activity, ArticulateFragment.newInstance(), ArticulateFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
             R.id.nav_flexibility -> {
 
-                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.green_pbsp)))
                 fragmentTransaction.replace(R.id.study_activity, FlexibilityFragment.newInstance(), FlexibilityFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
             R.id.nav_functional -> {
 
-                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.yellow_pbsp)))
                 fragmentTransaction.replace(R.id.study_activity, FunctionalFragment.newInstance(), FunctionalFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
             R.id.nav_strong -> {
 
-                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.red_pbsp)))
                 fragmentTransaction.replace(R.id.study_activity, StrongFragment.newInstance(), StrongFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
 
             R.id.nav_graph -> {
 
-                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue_pbsp)))
                 fragmentTransaction.replace(R.id.study_activity, FlexibilityFragment.newInstance(), FlexibilityFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
             R.id.nav_report -> {
 
-                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue_pbsp)))
                 fragmentTransaction.replace(R.id.study_activity, FunctionalFragment.newInstance(), FunctionalFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
             R.id.nav_change_player -> {
 
-                supportActionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue_pbsp)))
                 val intent = Intent(this, PlayerActivity::class.java)
                 startActivity(intent)
                 finish()

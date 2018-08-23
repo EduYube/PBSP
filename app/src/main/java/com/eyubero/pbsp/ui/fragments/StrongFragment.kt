@@ -27,6 +27,22 @@ class StrongFragment : BaseFragment(){
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_strong, container, false)
         activity!!.title = this.javaClass.simpleName.substringBefore("Fragment")
+        activity!!.window.navigationBarColor = resources.getColor(R.color.red_pbsp)
+        activity!!.window.statusBarColor = resources.getColor(R.color.red_pbsp)
+
+        binding.toFlexibilityButton.setOnClickListener {
+            val fragmentManager = fragmentManager
+            val fragmentTransaction = fragmentManager!!.beginTransaction()
+
+            fragmentTransaction.replace(R.id.study_activity, FlexibilityFragment.newInstance(), FlexibilityFragment::class.java.simpleName)
+            fragmentTransaction.commit() }
+
+        binding.toFunctionalButton.setOnClickListener {
+            val fragmentManager = fragmentManager
+            val fragmentTransaction = fragmentManager!!.beginTransaction()
+
+            fragmentTransaction.replace(R.id.study_activity, FunctionalFragment.newInstance(), FunctionalFragment::class.java.simpleName)
+            fragmentTransaction.commit() }
         return binding.root
     }
 }
