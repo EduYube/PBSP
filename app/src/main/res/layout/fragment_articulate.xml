@@ -12,7 +12,7 @@
             android:layout_height="0dp"
             android:layout_margin="5dp"
             android:gravity="center"
-            app:layout_constraintBottom_toTopOf="@+id/articulate_button"
+            app:layout_constraintBottom_toTopOf="@+id/toFlexibility"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -424,11 +424,11 @@
         </TableLayout>
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/articulate_button"
+            android:id="@+id/toFlexibility"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:src="@drawable/ic_withe_arrow"
+            android:src="@drawable/ic_withe_arrow_rigth"
             android:backgroundTint="@color/green_pbsp"
             app:layout_constraintTop_toBottomOf="@+id/tl_articuate"
             app:layout_constraintEnd_toEndOf="parent"
