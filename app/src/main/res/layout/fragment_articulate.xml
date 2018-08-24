@@ -429,7 +429,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:src="@drawable/ic_withe_arrow_rigth"
-            android:backgroundTint="@color/green_pbsp"
+            app:backgroundTint="@color/green_pbsp"
             app:layout_constraintTop_toBottomOf="@+id/tl_articuate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
