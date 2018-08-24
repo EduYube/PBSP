@@ -36,7 +36,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/cell_yellow"
                     android:gravity="center"
-                    android:text="Puntuación"
+                    android:text="Puntos"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -194,7 +194,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:backgroundTint="@color/red_pbsp"
+            app:backgroundTint="@color/red_pbsp"
             android:src="@drawable/ic_withe_arrow_left"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

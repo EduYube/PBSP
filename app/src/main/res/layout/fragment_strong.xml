@@ -1378,6 +1378,7 @@
             android:layout_margin="20dp"
             android:backgroundTint="@color/green_pbsp"
             android:src="@drawable/ic_withe_arrow_left"
+                    app:backgroundTint="@color/green_pbsp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tl_strongDcha" />
@@ -1389,6 +1390,7 @@
             android:layout_margin="20dp"
             android:backgroundTint="@color/yellow_pbsp"
             android:src="@drawable/ic_withe_arrow_rigth"
+                    app:backgroundTint="@color/yellow_pbsp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tl_strongDcha" />
