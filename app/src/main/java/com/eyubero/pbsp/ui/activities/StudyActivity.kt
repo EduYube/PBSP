@@ -58,7 +58,7 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
     private fun setPlayerMenuData(header: View?) {
 
         val name = header!!.findViewById<View>(R.id.menu_player_name) as TextView
-        val team = header!!.findViewById<View>(R.id.menu_player_team) as TextView
+        val team = header.findViewById<View>(R.id.menu_player_team) as TextView
 
         name.text = SharedApp.prefs.sharedName
         team.text = SharedApp.prefs.sharedTeam
@@ -75,6 +75,7 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
+        closeCount = 0
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
@@ -102,7 +103,7 @@ class StudyActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedLis
 
             R.id.nav_graph -> {
 
-                fragmentTransaction.replace(R.id.study_activity, FlexibilityFragment.newInstance(), FlexibilityFragment::class.java.simpleName)
+                fragmentTransaction.replace(R.id.study_activity, GraphicFragment.newInstance(), GraphicFragment::class.java.simpleName)
                 fragmentTransaction.commit()
             }
             R.id.nav_report -> {
